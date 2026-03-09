@@ -1,7 +1,7 @@
 :root {
     --pixel-size: 2px;
     --grid-cell: calc( var(--pixel-size) * 16);
-    --bg: #403f40;
+    --bg: #1b1a22;
   }
   .pixelify-sans {
   font-family: "Pixelify Sans", sans-serif;
@@ -40,7 +40,8 @@
     /* This is just for Pen decoration */
     width: calc(var(--pixel-size) * 220);
     height: calc(var(--pixel-size) * 190);
-    outline: var(--pixel-size) solid #fff;
+    border: #000000 calc(3 * var(--pixel-size)) solid;
+    border-radius: 10px;
     z-index:1;
     position:relative;
   }
@@ -229,9 +230,9 @@ h1{
   }
 
 .platform{
-  background-color: #4e2e24;
   position: relative;
   height: calc(var(--pixel-size) * 10);
+background-image: url('../media/brickwall.png');
 }
 
 .plat1{
@@ -349,6 +350,7 @@ h1{
   margin: 0;
   display: flex;
   align-items: center;
+  color: white;
 }
 #socials h2{
   position: relative;
@@ -357,5 +359,17 @@ h1{
 }
 #socials a{
   text-decoration: none;
-  color: black;
+  color: white;
+}
+#instruct{
+  position: fixed;
+  background-image: url('../media/wasd.png');
+  background-size: contain;
+  background-color: rgb(233, 168, 197);
+  width: calc(var(--pixel-size) * 50);
+  height: calc(var(--pixel-size) * 50) ;
+  border-radius: 5%;
+  top: -5px;
+  left: 0;
+  margin: 10px;
 }
