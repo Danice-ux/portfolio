@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+        <div class="frame">
+        <div class="corner_topleft"></div>
+        <div class="corner_topright"></div>
+        <div class="corner_bottomleft"></div>
+        <div class="corner_bottomright"></div>
+        
+        
+        <div class="game-screen">
+           <div class="map pixel-art">
+              <div class="character" facing="down" walking="true">
+                 <div class="shadow pixel-art"></div>
+                 <div class="character_spritesheet pixel-art"></div>
+              </div>
+               <h1>Projects</h1>
+               <div class="pedistals">
+                  <div class="projects" onclick="dataGet(0)">
+                  <img src="media/sparkles.gif" alt="" class="spark">
+                  <img src="media/pedi.png" alt="">  
+                  </div>
+                  <div class="projects" onclick="dataGet(1)">
+                                          <img src="media/sparkles.gif" alt="" class="spark">
+                  <img src="media/pedi.png" alt="">  
+                  </div>
+                  <div class="projects" onclick="dataGet(2)">
+                  <img src="media/pedi.png" alt="">  
+                  </div>
+                  <div class="projects" onclick="dataGet(3)">
+                  <img src="media/pedi.png" alt="">  
+                  </div>
+                  <div class="projects" onclick="dataGet(4)">
+                  <img src="media/pedi.png" alt="">  
+                  </div>
+                  <div class="projects" onclick="dataGet(5)">
+                  <img src="media/pedi.png" alt="">  
+                  </div>
+                  <div class="projects" onclick="dataGet(6)">
+                  <img src="media/pedi.png" alt="">  
+                  </div>
+               </div>
+               
+                  <div class="me" onclick="dataGet(7)">
+                     <h1 class="meh">About me</h1>
+                     <img src="media/sparkles.gif" alt="" class="spark">
+                     <img src="media/shrine.png" alt="">  
+                  </div>
+               <div class="platform plat1"></div>
+               <div class="platform plat2"></div>
+               <div class="platform plat3"></div>
+               <div class="platform plat2 two"></div>
+               <div class="platform plat3 three"></div>
+           </div>
+        </div>
+        </div>
+                       <div id="socials">
+                        <h2>Socials</h2>
+               <a href="media/CV_Danice_Ouwerkerk.pdf" download=""><img src="media/socials.png" alt="socials hearts" class="socials">CV</a>
+               <a href="https://github.com/Danice-ux"><img src="media/socials.png" alt="socials hearts" class="socials">GIT</a>
+               <a href="https://www.linkedin.com/in/danice-ouwerkerk-ba007b3a0/"><img src="media/socials.png" alt="socials hearts" class="socials">LINK</a>
+
+               </div>
+               <div id="popup">
+                  <button id="off" onclick="toggleOff()">X</button>
+                  <br><br>
+                  <img src="" id="imagePop" alt="">
+                  <p id="titelPop"></p>
+                  <p id="omschrijvingPop"></p>
+               </div>
+
+
+</body>
+</html>

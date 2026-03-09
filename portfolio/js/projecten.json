@@ -1,0 +1,58 @@
+[
+{
+  "title": "Modellenbureau",
+  "img": "modellen.png",
+  "info": 
+   "Een school project voor de GLR opleiding fotografie. studenten konden zich opgeven als model en fotograen konden hun makkelijk opzoeken.<br> groepsleden:<br> Stephy Lai - ontwerper/frontend<br> Danice Ouwekerkerk - backend",
+   "link": ""
+
+},
+{
+  "title": "SDOK",
+  "img": "sdok.png",
+  "info": "Stop de ontkoking was een school project om jongeren te laten overtuigen om meer te koken inplaats van bestellen. je kan recepten bekijken, delen, toevoegen en maken. je kan je eigen recepten beheeren en aanpassen naar wil. <br> groepsleden:<br> Stephy Lai - ontwerper/frontend<br> Danice Ouwekerkerk - Backend/Database"
+},
+{
+  "title": "COMING SOON",
+  "img": "",
+  "info": [ 
+    "This project will be coming soon"
+  ]
+},
+{
+  "title": "COMING SOON",
+  "img": "",
+  "info": [ 
+    "This project will be coming soon"
+  ]
+},
+{
+  "title": "COMING SOON",
+  "img": "",
+  "info": [ 
+    "This project will be coming soon"
+  ]
+},
+{
+  "title": "COMING SOON",
+  "img": "",
+  "info": [ 
+    "This project will be coming soon"
+  ]
+},
+{
+  "title": "COMING SOON",
+  "img": "",
+  "info": [ 
+    "This project will be coming soon"
+  ]
+},
+{
+  "title": "About The Developer",
+  "img": "portrait.png",
+  "info": [ 
+    "My name is Danice. I'm a game and backend enthusiast and like tinkering with games in my free time. I'm well versed in backend languages and always thrive to learn more everyday."
+  ]
+}
+
+]

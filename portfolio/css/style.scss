@@ -1,0 +1,361 @@
+:root {
+    --pixel-size: 2px;
+    --grid-cell: calc( var(--pixel-size) * 16);
+    --bg: #403f40;
+  }
+  .pixelify-sans {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+  @media( min-width: 700px ) {
+    :root {
+      --pixel-size: 3px;
+    }
+  }
+  @media( min-width: 1000px ) {
+    :root {
+      --pixel-size: 4px;
+    }
+  }
+  
+  html, body {
+    height: 100%;
+    overflow:hidden;
+  font-family: "Pixelify Sans", sans-serif;
+  }
+  
+  body {
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pixel-art {
+    image-rendering: pixelated;
+  }
+  
+  .frame {
+    /* This is just for Pen decoration */
+    width: calc(var(--pixel-size) * 220);
+    height: calc(var(--pixel-size) * 190);
+    outline: var(--pixel-size) solid #fff;
+    z-index:1;
+    position:relative;
+  }
+  
+  .game-screen {
+    width: calc(var(--pixel-size) * 220);
+    height: calc(var(--pixel-size) * 190);
+    overflow: hidden;
+    background-image: url(../media/brickwall.png);
+    background-size: calc(5 * var(--grid-cell));
+    position:fixed;
+    background-attachment: fixed;
+  }
+  
+  .map {
+    background-image: url("../media/skyback.gif");
+    background-color: #377546ec;
+    background-size: auto calc(11 * var(--grid-cell));
+    width: calc(50 * var(--grid-cell));
+    height: calc(55 * var(--grid-cell));
+    position: relative;
+    background-repeat: repeat-x;
+  
+  }
+  
+  .character {
+    width: calc( var(--grid-cell)* 2 );
+    height: calc( var(--grid-cell)* 2 );
+    position: absolute;
+    overflow:hidden;
+  }
+  
+  .shadow {
+    width: calc( var(--grid-cell)* 2 );
+    height: calc( var(--grid-cell)* 2 );
+    position: absolute;
+    left:0;
+    top:0;
+    background: url("https://assets.codepen.io/21542/DemoRpgCharacterShadow.png") no-repeat no-repeat;
+    background-size: 100%;
+  }
+  
+  .character_spritesheet {
+    position: absolute;
+    background: url("https://assets.codepen.io/21542/DemoRpgCharacter.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc( var(--grid-cell)* 8 );
+    height: calc( var(--grid-cell)* 8 );
+  }
+  
+  .character[facing="right"] .character_spritesheet {
+    background-position-y: calc( var(--pixel-size) * -32 );
+  }
+  .character[facing="up"] .character_spritesheet {
+    background-position-y: calc( var(--pixel-size) * -64 );
+  }
+  .character[facing="left"] .character_spritesheet {
+    background-position-y: calc( var(--pixel-size) * -96 );
+  }
+  .character[walking="true"] .character_spritesheet {
+    animation: walkAnimation 0.6s steps(4) infinite;
+  }
+  
+  @keyframes walkAnimation {
+    from {
+      transform: translate3d(0%,0%,0);
+    }
+    to {
+      transform: translate3d(-100%,0%,0);
+    }
+  }
+  
+  .dpad {
+    position:absolute;
+    right: calc(var(--pixel-size) * 2);
+    bottom: calc(var(--pixel-size) * 2);
+    width: calc(var(--pixel-size) * 37);
+    height: calc(var(--pixel-size) * 38);
+  }
+  .dpad-button {
+    appearance:none;
+    outline:0;
+    border:0;
+    background:transparent;
+    padding:0;
+    cursor:pointer;
+  }
+  .dpad-button svg {
+    display:block;
+    height: calc(var(--pixel-size) * 13);
+  }
+  
+  .dpad-button.pressed .Arrow_arrow-inset { stroke:#07c2cc; }
+  .dpad-button.pressed .Arrow_arrow-body { stroke:#17dfea; }
+  
+  .dpad-up {
+    position: absolute;
+    left: calc(var(--pixel-size) * 12);
+    top:0;
+  }
+  .dpad-down {
+    position: absolute;
+    bottom:var(--pixel-size);
+    left: calc(var(--pixel-size) * 12);
+  }
+  .dpad-left {
+    position: absolute;
+    top: calc(var(--pixel-size) * 12);
+    left:0;
+  }
+  .dpad-right {
+    position: absolute;
+    top: calc(var(--pixel-size) * 12);
+    right:0;
+  }
+  
+  .dpad {
+    user-select:none;
+  }
+  
+  
+  .corner_topleft,
+  .corner_topright,
+  .corner_bottomleft,
+  .corner_bottomright {
+    position: absolute;
+    width: var(--pixel-size);
+    height: var(--pixel-size);
+    background: var(--bg);
+    z-index:2;
+  }
+  
+  .corner_topleft {
+    top: calc(var(--pixel-size) * -1);
+    left: calc(var(--pixel-size) * -1);
+  }
+  .corner_topright {
+    top: calc(var(--pixel-size) * -1);
+    right: calc(var(--pixel-size) * -1);
+  }
+  .corner_bottomleft {
+    bottom: calc(var(--pixel-size) * -1);
+    left: calc(var(--pixel-size) * -1);
+  }
+  .corner_bottomright {
+    bottom: calc(var(--pixel-size) * -1);
+    right: calc(var(--pixel-size) * -1);
+  }
+  
+  .headline {
+    position:absolute;
+    top:calc(var(--pixel-size) * 2);
+    right:calc(var(--pixel-size) * 2);
+    width: calc(var(--pixel-size) * 75)
+  }
+  
+  .pin-button {
+    position: absolute;
+    bottom:calc(var(--pixel-size) * 2);
+    left:calc(var(--pixel-size) * 2);
+    appearance: none;
+    outline: 0;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+  }
+  .pin-button svg {
+    display: block;
+    width: calc(var(--pixel-size) * 22);
+  }
+  .pin-button:active {
+    transform: translateY(var(--pixel-size))
+  }
+h1{
+  position: absolute;
+  left: calc(23 * var(--grid-cell));
+
+}
+  #house{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    left: calc(20 * var(--grid-cell));
+    background-color: #403f40;
+  }
+
+.platform{
+  background-color: #4e2e24;
+  position: relative;
+  height: calc(var(--pixel-size) * 10);
+}
+
+.plat1{
+    width: calc(var(--pixel-size) * 350);
+    left: calc(13 * var(--grid-cell));
+    top: calc(var(--pixel-size) * 60);
+}
+.plat2{
+    width: calc(var(--pixel-size) * 60);
+    left: calc(9 * var(--grid-cell));
+    top: calc(var(--pixel-size) * 80);
+}
+.plat3{
+    width: calc(var(--pixel-size) * 50);
+    left: calc(6 * var(--grid-cell));
+    top: calc(var(--pixel-size) * 110);
+}
+.three{
+    left: calc(39 * var(--grid-cell));
+}
+.two{
+    left: calc(35 * var(--grid-cell));
+}
+.pedistals img{
+  position: absolute;
+  left: calc(13 * var(--grid-cell));
+  top: calc(var(--pixel-size) * 29);
+  width:calc(var(--pixel-size) * 35) ;
+   
+}
+.pedistals:hover{
+  cursor: pointer;
+}
+.projects:nth-child(1){
+  position: relative;
+  left: calc(6 * var(--grid-cell))
+}
+.projects:nth-child(2){
+  position: relative;
+  left: calc(9 * var(--grid-cell))
+}
+.projects:nth-child(3){
+  position: relative;
+  left: calc(12 * var(--grid-cell))
+}
+.projects:nth-child(4){
+  position: relative;
+  left: calc(15 * var(--grid-cell))
+}
+.projects:nth-child(5){
+  position: relative;
+  left: calc(18 * var(--grid-cell))
+}
+.projects:nth-child(6){
+  position: relative;
+  left: calc(3 * var(--grid-cell))
+}
+
+.price{
+  width:calc(var(--pixel-size) * 50) ;
+  z-index: 3;
+}
+.me img{
+  position: absolute;
+  left: calc(23 * var(--grid-cell));
+  top: calc(var(--pixel-size) * 138);
+  width:calc(var(--pixel-size) * 35) ;
+  z-index: -2;
+   
+}
+.me:hover{
+  cursor: pointer;
+}
+.me h1{
+    top: calc(var(--pixel-size) * 80);
+}
+#popup{
+  position: fixed;
+  background-color: #9896a0;
+  width: calc(var(--pixel-size) * 100);
+    top: calc(var(--pixel-size) * 50);
+  left: calc(var(--pixel-size) * 120);
+  height: 600px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  display: none;
+  padding: 40px;
+  border-radius: 40px;
+  z-index: 100;
+}
+#popup img{
+  width: calc(var(--pixel-size) * 60) ;
+}
+/*popup toggle knop*/
+#off{
+  left: 0;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 30px;
+  &:hover{
+    cursor: grab;
+  }
+}
+
+.spark{
+  z-index: 1;
+}
+#socials{
+  position: fixed;
+  left: 35%;
+  top: -5px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+#socials h2{
+  position: relative;
+  padding: 20px;
+  top: -2px;
+}
+#socials a{
+  text-decoration: none;
+  color: black;
+}
