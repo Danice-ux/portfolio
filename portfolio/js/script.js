@@ -14,7 +14,7 @@ const direct = {
 const keys = {
     'ArrowLeft': direct.left,
     'ArrowRight': direct.right,
-    'Arrowup': direct.space,
+    'ArrowUp': direct.space,
     'ArrowDown': direct.down
 }
 
@@ -108,15 +108,15 @@ if (x > rightLimit) { x = rightLimit; }
 if (y < topLimit) { y = topLimit; }
 if (y > bottomLimit) { y = bottomLimit; }
 
-const CAMERA_LEFT_OFFSET_PX = 100;
-const CAMERA_TOP_OFFSET_PX = 150;
+const CAMERA_LEFT_OFFSET_PX = 50;
+const CAMERA_TOP_OFFSET_PX = 80;
 
 
 // console.log('x:'+ x); 
 // console.log ("y:"+ y);
 //213 513
 const camera_transform_left = -x*pixelSize+(pixelSize * CAMERA_LEFT_OFFSET_PX);
-const camera_transform_top = 0;
+const camera_transform_top = -y*pixelSize+(pixelSize * CAMERA_TOP_OFFSET_PX);
 map.style.transform = `translate3d( ${camera_transform_left}px, ${camera_transform_top}px, 0 )`;
 alex.style.transform = `translate3d( ${x*pixelSize}px, ${y*pixelSize}px, 0 )`;
 }

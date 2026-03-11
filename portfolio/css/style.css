@@ -1,7 +1,7 @@
 :root {
   --pixel-size: 2px;
   --grid-cell: calc( var(--pixel-size) * 16);
-  --bg: #1b1a22;
+  --bg: #6994d3;
 }
 
 .pixelify-sans {
@@ -39,22 +39,23 @@ body {
 
 .frame {
   /* This is just for Pen decoration */
-  width: calc(var(--pixel-size) * 220);
-  height: calc(var(--pixel-size) * 190);
-  border: #000000 calc(3 * var(--pixel-size)) solid;
-  border-radius: 10px;
+  top: -200px;
+  width: calc(var(--pixel-size) * 140);
+  height: calc(var(--pixel-size) * 110);
   z-index: 1;
   position: relative;
 }
 
 .game-screen {
-  width: calc(var(--pixel-size) * 220);
-  height: calc(var(--pixel-size) * 190);
+  width: calc(var(--pixel-size) * 140);
+  height: calc(var(--pixel-size) * 110);
   overflow: hidden;
   background-image: url(../media/brickwall.png);
   background-size: calc(5 * var(--grid-cell));
   position: fixed;
   background-attachment: fixed;
+  border: #000000 calc(3 * var(--pixel-size)) solid;
+  border-radius: 10px;
 }
 
 .map {
@@ -348,12 +349,9 @@ h1 {
 
 #popup {
   position: fixed;
-  background-color: #9896a0;
-  width: calc(var(--pixel-size) * 100);
-  top: calc(var(--pixel-size) * 50);
-  left: calc(var(--pixel-size) * 120);
-  height: 600px;
-  overflow: hidden;
+  width: calc(var(--pixel-size) * 120);
+  height: calc(var(--pixel-size) * 60);
+  overflow: scroll;
   color: white;
   text-align: center;
   padding-top: 20px;
@@ -364,7 +362,23 @@ h1 {
 }
 
 #popup img {
+  width: calc(var(--pixel-size) * 50);
+  left: 10px;
+  position: absolute;
+  border: #000000 solid 2px;
+}
+
+#infor {
+  position: absolute;
+  top: 0px;
+  left: calc(var(--pixel-size) * 70);
   width: calc(var(--pixel-size) * 60);
+}
+
+#popup button {
+  margin-left: calc(var(--pixel-size) * 5);
+  top: calc(var(--pixel-size) * 5);
+  position: absolute;
 }
 
 /*popup toggle knop*/
@@ -408,11 +422,72 @@ h1 {
   position: fixed;
   background-image: url("../media/wasd.png");
   background-size: contain;
-  background-color: rgb(233, 168, 197);
   width: calc(var(--pixel-size) * 50);
   height: calc(var(--pixel-size) * 50);
   border-radius: 5%;
   top: -5px;
   left: 0;
   margin: 10px;
+}
+
+#bottomscreen {
+  width: calc(var(--pixel-size) * 140);
+  height: calc(var(--pixel-size) * 80);
+  border: #000000 calc(3 * var(--pixel-size)) solid;
+  border-radius: 10px;
+  z-index: 1;
+  position: relative;
+  margin-top: calc(var(--pixel-size) * 125);
+  z-index: 10;
+}
+
+#screen {
+  position: relative;
+  z-index: 2;
+  width: calc(var(--pixel-size) * 140);
+  height: calc(var(--pixel-size) * 80);
+  overflow: hidden;
+  background-image: url(../media/brickwall.png);
+  background-size: calc(5 * var(--grid-cell));
+  position: fixed;
+  background-attachment: fixed;
+}
+
+.controlbut {
+  position: absolute;
+  width: calc(var(--pixel-size) * 50);
+}
+
+.con2 {
+  left: calc(var(--pixel-size) * 160);
+  top: calc(var(--pixel-size) * 135);
+}
+
+.con1 {
+  left: calc(var(--pixel-size) * -60);
+  top: calc(var(--pixel-size) * 135);
+}
+
+#covertop {
+  position: absolute;
+  border: #000000 solid 8px;
+  width: calc(var(--pixel-size) * 280);
+  height: calc(var(--pixel-size) * 130);
+  left: calc(var(--pixel-size) * -70);
+  top: calc(var(--pixel-size) * -10);
+  z-index: -2;
+  background-color: #1b1a22;
+  box-shadow: inset 0px 0px 10px;
+}
+
+#coverbot {
+  position: absolute;
+  border: #000000 solid 8px;
+  top: calc(var(--pixel-size) * 120);
+  width: calc(var(--pixel-size) * 280);
+  height: calc(var(--pixel-size) * 100);
+  left: calc(var(--pixel-size) * -70);
+  background-color: #1b1a22;
+  box-shadow: inset 0px 0px 10px;
+  z-index: -2;
 }/*# sourceMappingURL=style.css.map */
