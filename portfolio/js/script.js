@@ -109,7 +109,7 @@ if (y < topLimit) { y = topLimit; }
 if (y > bottomLimit) { y = bottomLimit; }
 
 const CAMERA_LEFT_OFFSET_PX = 50;
-const CAMERA_TOP_OFFSET_PX = 80;
+const CAMERA_TOP_OFFSET_PX = 70;
 
 
 // console.log('x:'+ x); 

@@ -34,6 +34,7 @@ body {
 }
 
 .pixel-art {
+  image-rendering: -moz-crisp-edges;
   image-rendering: pixelated;
 }
 
@@ -106,7 +107,17 @@ body {
 }
 
 .character[walking=true] .character_spritesheet {
-  animation: walkAnimation 0.6s steps(4) infinite;
+  -webkit-animation: walkAnimation 0.6s steps(4) infinite;
+          animation: walkAnimation 0.6s steps(4) infinite;
+}
+
+@-webkit-keyframes walkAnimation {
+  from {
+    transform: translate3d(0%, 0%, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0%, 0);
+  }
 }
 
 @keyframes walkAnimation {
@@ -117,99 +128,6 @@ body {
     transform: translate3d(-100%, 0%, 0);
   }
 }
-.dpad {
-  position: absolute;
-  right: calc(var(--pixel-size) * 2);
-  bottom: calc(var(--pixel-size) * 2);
-  width: calc(var(--pixel-size) * 37);
-  height: calc(var(--pixel-size) * 38);
-}
-
-.dpad-button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  outline: 0;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-}
-
-.dpad-button svg {
-  display: block;
-  height: calc(var(--pixel-size) * 13);
-}
-
-.dpad-button.pressed .Arrow_arrow-inset {
-  stroke: #07c2cc;
-}
-
-.dpad-button.pressed .Arrow_arrow-body {
-  stroke: #17dfea;
-}
-
-.dpad-up {
-  position: absolute;
-  left: calc(var(--pixel-size) * 12);
-  top: 0;
-}
-
-.dpad-down {
-  position: absolute;
-  bottom: var(--pixel-size);
-  left: calc(var(--pixel-size) * 12);
-}
-
-.dpad-left {
-  position: absolute;
-  top: calc(var(--pixel-size) * 12);
-  left: 0;
-}
-
-.dpad-right {
-  position: absolute;
-  top: calc(var(--pixel-size) * 12);
-  right: 0;
-}
-
-.dpad {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-
-.corner_topleft,
-.corner_topright,
-.corner_bottomleft,
-.corner_bottomright {
-  position: absolute;
-  width: var(--pixel-size);
-  height: var(--pixel-size);
-  background: var(--bg);
-  z-index: 2;
-}
-
-.corner_topleft {
-  top: calc(var(--pixel-size) * -1);
-  left: calc(var(--pixel-size) * -1);
-}
-
-.corner_topright {
-  top: calc(var(--pixel-size) * -1);
-  right: calc(var(--pixel-size) * -1);
-}
-
-.corner_bottomleft {
-  bottom: calc(var(--pixel-size) * -1);
-  left: calc(var(--pixel-size) * -1);
-}
-
-.corner_bottomright {
-  bottom: calc(var(--pixel-size) * -1);
-  right: calc(var(--pixel-size) * -1);
-}
-
 .headline {
   position: absolute;
   top: calc(var(--pixel-size) * 2);
@@ -368,6 +286,16 @@ h1 {
   border: #000000 solid 2px;
 }
 
+#popup .socials {
+  position: relative;
+  border: none;
+}
+
+#popup #infor a {
+  text-decoration: none;
+  color: white;
+}
+
 #infor {
   position: absolute;
   top: 0px;
@@ -390,32 +318,12 @@ h1 {
   font-size: 30px;
 }
 #off:hover {
+  cursor: -webkit-grab;
   cursor: grab;
 }
 
 .spark {
   z-index: 1;
-}
-
-#socials {
-  position: fixed;
-  left: 35%;
-  top: -5px;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  color: white;
-}
-
-#socials h2 {
-  position: relative;
-  padding: 20px;
-  top: -2px;
-}
-
-#socials a {
-  text-decoration: none;
-  color: white;
 }
 
 #instruct {
@@ -430,20 +338,10 @@ h1 {
   margin: 10px;
 }
 
-#bottomscreen {
-  width: calc(var(--pixel-size) * 140);
-  height: calc(var(--pixel-size) * 80);
-  border: #000000 calc(3 * var(--pixel-size)) solid;
-  border-radius: 10px;
-  z-index: 1;
-  position: relative;
-  margin-top: calc(var(--pixel-size) * 125);
-  z-index: 10;
-}
-
 #screen {
   position: relative;
   z-index: 2;
+  margin-top: calc(var(--pixel-size) * 125);
   width: calc(var(--pixel-size) * 140);
   height: calc(var(--pixel-size) * 80);
   overflow: hidden;
@@ -451,6 +349,8 @@ h1 {
   background-size: calc(5 * var(--grid-cell));
   position: fixed;
   background-attachment: fixed;
+  border: #000000 calc(3 * var(--pixel-size)) solid;
+  border-radius: 10px;
 }
 
 .controlbut {
@@ -490,4 +390,19 @@ h1 {
   background-color: #1b1a22;
   box-shadow: inset 0px 0px 10px;
   z-index: -2;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.power {
+  position: relative;
+  top: calc(var(--pixel-size) * 214);
+  left: calc(var(--pixel-size) * -40);
+  display: inline-block;
+  color: white;
+}
+
+.power button {
+  border-radius: 100%;
+  border: none;
+  margin-left: calc(var(--pixel-size) * 5);
+}
+/*# sourceMappingURL=style.css.map */

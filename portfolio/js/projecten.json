@@ -53,6 +53,14 @@
   "info": [ 
     "My name is Danice. I'm a game and backend enthusiast and like tinkering with games in my free time. I'm well versed in backend languages and always thrive to learn more everyday."
   ]
+},
+{
+  "title": "Contact me!",
+  "img": "portrait.png",
+  "info": [ 
+    "<a href='https://github.com/Danice-ux'><img src='media/socials.png' alt='socials hearts' class='socials'>GIT</a><br> <a href='https://www.linkedin.com/in/danice-ouwerkerk-ba007b3a0/'><img src='media/socials.png' alt='socials hearts' class='socials'>LINK</a> <br> <a href='media/CV_Danice_Ouwerkerk.pdf' download=''><img src='media/socials.png' alt='socials hearts' class='socials'>CV</a>"
+  ]
 }
+
 
 ]
